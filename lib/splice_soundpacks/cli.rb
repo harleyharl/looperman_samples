@@ -18,10 +18,19 @@ class SpliceSoundpacks::CLI
   
   def menu 
     puts "Enter the number of the soundpack you'd like to dive into"
+    while input!= "exit"
+    input = gets.strip.downcase
+    
+    case input 
+    when "1"
+      puts "More info on pack 1"
+    when "2"
+      puts "More info on pack 2"
+    when "3"
+      puts "More info on pack 3"
+    end 
+  end 
   end 
   
-  
-  
-  
-  
+
 end 
