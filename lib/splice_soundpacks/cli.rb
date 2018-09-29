@@ -1,6 +1,6 @@
 # our CLI controller 
 
-class DailyDeal::CLI 
+class SpliceSoundpacks::CLI 
   
   def call 
     puts "Today's Daily Deals:"

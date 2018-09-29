@@ -1,5 +1,2 @@
-require "splice_soundpacks/version"
-
-module SpliceSoundpacks
-  # Your code goes here...
-end
+require_relative "./splice_soundpacks/version"
+require_relative "./splice_soundpacks/cli"

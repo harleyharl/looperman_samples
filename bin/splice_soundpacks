@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
 
+require "./lib/splice_soundpacks"
 
 SpliceSoundpacks::CLI.new.call
