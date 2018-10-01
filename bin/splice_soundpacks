@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
-require "./lib/splice_soundpacks"
 require "bundler/setup"
-require "splice_soundpacks"
+require "./lib/splice_soundpacks"
 
 SpliceSoundpacks::CLI.new.call
