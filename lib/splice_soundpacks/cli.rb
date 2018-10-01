@@ -10,11 +10,6 @@ class SpliceSoundpacks::CLI
   
   def list_soundpacks
     puts "Today's Most Popular Soundpacks"
-    puts <<-DOC
-    1. lex luger - 808s and kicks - May 2016
-    2. KASHMR - dance anthems 2018 - March 2018
-    3. Aphex Twin - Psychadelic Drums - December 1999
-    DOC
     @deal = SpliceSoundpacks::Soundpack.today
   end
   
