@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{"this is a ruby gem CLI for scraping sounds from splice"}
   spec.description   = %q{.}
-  spec.homepage      = "www.rubygems.com"
+  spec.homepage      = "https://github.com/harleyharl"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
