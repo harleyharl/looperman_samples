@@ -38,7 +38,8 @@ class SpliceSoundpacks::CLI
   end 
   end 
   
-  def goodbye 
+  def goodbye
+    puts "see you tomorrow for more soundpacks!"
   end 
   
 
