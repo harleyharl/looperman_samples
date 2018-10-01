@@ -1,4 +1,4 @@
-class Soundpack
+class SpliceSoundpacks::Soundpack
   
   attr_accessor :name, :artist, :price, :url 
   
