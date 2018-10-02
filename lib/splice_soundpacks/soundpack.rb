@@ -16,7 +16,13 @@ class SpliceSoundpacks::Soundpack
   end 
   
   def self.scrape_splice
-    doc = Nokogiri::HTML(open("https://splice.com/sounds"))
+    # doc = Nokogiri::HTML(open("https://splice.com/sounds"))
+    # splice_url = "https://splice.com/sounds"
+    # html = open(splice_url)
+    # doc = Nokogiri::HTML(html)
+    # binding.pry
+    doc = Nokogiri::HTML("https://splice.com/sounds")
+    # content = doc.read
     binding.pry
   end 
   
