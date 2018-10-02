@@ -22,14 +22,15 @@ class SpliceSoundpacks::CLI
     puts "Enter the number of the soundpack you'd like to dive into or type list"
     input = gets.strip.downcase
     
-    if input.to_i > 0 
-      puts @soundpacks[input.to_i-1]
-    elsif input == "list"
-      list_soundpacks
-    else 
-      puts "not sure what you want, type list or exit"
+     if input.to_i > 0 
+       the_soundpack = @soundpacks[input.to_i-1]
+       puts "#{i}. #{the_soundpack.name} - #{the_soundpack.artist} - #{the_soundpack.price}"
+     elsif input == "list"
+       list_soundpacks
+     else 
+       puts "not sure what you want, type list or exit"
+     end 
     end 
-  end 
   end 
   
   def goodbye
