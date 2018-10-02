@@ -1,4 +1,6 @@
+require "open-uri"
 require "nokogiri"
+require "pry"
 require_relative "./splice_soundpacks/version"
 require_relative "./splice_soundpacks/cli"
 require_relative "./splice_soundpacks/soundpack"
