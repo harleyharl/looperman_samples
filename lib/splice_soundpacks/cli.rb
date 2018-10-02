@@ -10,7 +10,10 @@ class SpliceSoundpacks::CLI
   
   def list_soundpacks
     puts "Today's Most Popular Soundpacks"
-    @deal = SpliceSoundpacks::Soundpack.today
+    @soundpacks = SpliceSoundpacks::Soundpack.today
+    @soundpacks.each.with_index(1) do |soundpack, i| 
+      puts "#{i}. #{soundpack.name} - #{soundpack.artist} - #{soundpack.price}"
+    end 
   end
   
   def menu 
@@ -18,14 +21,10 @@ class SpliceSoundpacks::CLI
     while input!= "exit"
     puts "Enter the number of the soundpack you'd like to dive into or type list"
     input = gets.strip.downcase
-    case input 
-    when "1"
-      puts "More info on pack 1"
-    when "2"
-      puts "More info on pack 2"
-    when "3"
-      puts "More info on pack 3"
-    when "list"
+    
+    if input.to_i > 0 
+      puts @soundpacks[input.to_i-1]
+    elsif input == "list"
       list_soundpacks
     else 
       puts "not sure what you want, type list or exit"
