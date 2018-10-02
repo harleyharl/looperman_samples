@@ -8,27 +8,16 @@ class SpliceSoundpacks::Soundpack
   end 
   
   def self.scrape_soundpacks
-    
     soundpacks = []
     
-    # go to splice, find the soundpack 
-    # extract the properties 
-    # instatiate a soundpack 
+    soundpacks << self.scrape_splice
     
-    # soundpack_1 = self.new 
-    # soundpack_1.name = "808s and kicks"
-    # soundpack_1.artist = "lex luger" 
-    # soundpack_1.url = "www.splice.com"
-    # soundpack_1.price  = "$10"
-    
-    # soundpack_2 = self.new 
-    # soundpack_2.name = "dance anthems 2018"
-    # soundpack_2.artist = "KASHMR" 
-    # soundpack_2.url = "www.splice.com"
-    # soundpack_2.price  = "$20"
-    
-    # [soundpack_1, soundpack_2]
-    deals 
+    soundpacks
+  end 
+  
+  def delf.scrape_splice
+    doc = Nokogiri::HTML(open(https://splice.com/))
+    binding.pry
   end 
   
 end 
