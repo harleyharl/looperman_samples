@@ -1,13 +1,18 @@
-how it will work:
+GEM outline:
 
-user types splice_soundpacks 
+1. there are x new samples today. how would you like to browse?
 
-a list of soundpacks are shown
+ 1. browse samples by key
+ 2. browse samples by tempo
+ 3. browse samples by number of downloads
 
-the user can then select a soundpack
 
-a soundpack has a name, an artist, and files inside it. 
+3. returns a list of samples - which sample would you like to hear (push the number or push and hold the number for continuous play)?
 
-the user can ask for the name, the artist and to see the files inside it 
+	1. “808 nightmare” - 1A
+	2. “mom’s spaghetti” - 1A
 
-if the user wants to see the files they can, and they can see key, tempo etc information about each file, as well as a url link to the file 
+
+4. currently playing “mom's spaghetti” by emin3m
+
+5. type “download” to download the current file, "next" go to the next sample, "back" to go to the previous sample or "list" to return to list view. type "exit" to quit. 
