@@ -1,6 +1,6 @@
 class LoopermanSamples::Sample
 
-  attr_accessor :name, :artist, :price, :url
+  attr_accessor :title, :key, :download_count, :url, :creator, :bpm
   #key, tempo, number of downloads
 
   def self.today
@@ -17,17 +17,31 @@ class LoopermanSamples::Sample
   end
 
   def self.scrape_looperman
-    # doc = Nokogiri::HTML(open("https://splice.com/sounds"))
-    # splice_url = "https://splice.com/sounds"
-    # html = open(splice_url)
-    # doc = Nokogiri::HTML(html)
-    # binding.pry
-    samples = []
+
+    sample_titles = []
+
     doc = Nokogiri::HTML(open("https://www.looperman.com/loops?page=1&order=downloads&dir=d&when=1"))
-    content = doc.css(".player-top").css("a.player-title")
-    # content.each do |item|
-    #   # sample_titles << item.text
+    doc.css("div#body-content").css("div div.player-wrapper").each do |player_wrapper|
+      title = player_wrapper.css(".player-title").text
+      creator = player_wrapper.css(".player-sub-title").css(".icon-user").text
+      downloads = player_wrapper.css("div .player-stats-wrapper").css(".stats-downloads").text
+
+      # samples << {title: title, key: key, download_count: download_count, url: url, creator: creator, bpm: bpm}
+      binding.pry
+    end
+      # sample_title = player_wrapper.css("div.player-top").text
+    # doc.css(".body-content").css("div div.player-wrapper")
+    # .each do |sample_player|
+    #     sample_title = sample_player.css("div.player-top").text
+        # binding.pry
+      # end
+
+
+    # sample_title = doc.css(".player-top").css("a.player-title").each do |title|
+    #   title.text
+    #   binding.pry
     # end
+      # sample_titles << item.text
   end
 
   #sample title - each player-wrapper has a player topper which has the title of the track in its player-title
