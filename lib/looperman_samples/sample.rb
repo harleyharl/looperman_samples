@@ -1,21 +1,22 @@
-class SpliceSoundpacks::Soundpack
+class LoopermanSamples::Sample
 
   attr_accessor :name, :artist, :price, :url
+  #key, tempo, number of downloads
 
   def self.today
     #should scrape splice and return soundpacks based on that data
-    self.scrape_soundpacks
+    self.scrape_samples
   end
 
-  def self.scrape_soundpacks
-    soundpacks = []
+  def self.scrape_samples
+    samples = []
 
-    soundpacks << self.scrape_splice
+    samples << self.scrape_looperman
 
-    soundpacks
+    samples
   end
 
-  def self.scrape_splice
+  def self.scrape_looperman
     # doc = Nokogiri::HTML(open("https://splice.com/sounds"))
     # splice_url = "https://splice.com/sounds"
     # html = open(splice_url)
@@ -24,9 +25,9 @@ class SpliceSoundpacks::Soundpack
     samples = []
     doc = Nokogiri::HTML(open("https://www.looperman.com/loops?page=1&order=downloads&dir=d&when=1"))
     content = doc.css(".player-top").css("a.player-title")
-    content.each do |item|
-      sample_titles << item.text
-    end
+    # content.each do |item|
+    #   # sample_titles << item.text
+    # end
   end
 
   #sample title - each player-wrapper has a player topper which has the title of the track in its player-title

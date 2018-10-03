@@ -1,4 +1,4 @@
-# SpliceSoundpacks
+# LoopermanSamples
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/splice_soundpacks`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'splice_soundpacks'
+gem 'looperman_samples'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install splice_soundpacks
+    $ gem install looperman_samples
 
 ## Usage
 
@@ -40,4 +40,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the SpliceSoundpacks project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'harleyharl'/splice_soundpacks/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the LoopermanSamples project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'harleyharl'/splice_soundpacks/blob/master/CODE_OF_CONDUCT.md).

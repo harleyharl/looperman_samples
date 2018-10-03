@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    splice_soundpacks (0.1.0)
+    looperman_samples (0.1.0)
       nokogiri
 
 GEM
@@ -39,7 +39,7 @@ DEPENDENCIES
   pry
   rake (~> 10.0)
   rspec
-  splice_soundpacks!
+  looperman_samples!
 
 BUNDLED WITH
    1.16.5

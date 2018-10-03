@@ -1,15 +1,15 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "splice_soundpacks/version"
+require "looperman_samples/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "splice_soundpacks"
-  spec.version       = SpliceSoundpacks::VERSION
+  spec.name          = "looperman_samples"
+  spec.version       = LoopermanSamples::VERSION
   spec.authors       = ["'Harley Rayner'"]
   spec.email         = ["'harleymteden@gmail.com'"]
 
-  spec.summary       = %q{"this is a ruby gem CLI for scraping sounds from splice"}
+  spec.summary       = %q{"this is a ruby gem CLI for scraping samples from looperman"}
   spec.description   = %q{.}
   spec.homepage      = "https://github.com/harleyharl"
   spec.license       = "MIT"
@@ -36,6 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "pry"
-  
+
   spec.add_dependency "nokogiri"
 end
