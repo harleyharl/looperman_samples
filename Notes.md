@@ -1,5 +1,6 @@
 GEM outline:
 
+CLI:
 1. there are x new samples today. how would you like to browse?
 
  1. browse samples by key
@@ -15,4 +16,11 @@ GEM outline:
 
 4. currently playing “mom's spaghetti” by emin3m
 
-5. type “download” to download the current file, "next" go to the next sample, "back" to go to the previous sample or "list" to return to list view. type "exit" to quit. 
+5. type “download” to download the current file, "next" go to the next sample, "back" to go to the previous sample or "list" to return to list view. type "exit" to quit.
+
+Classes:
+sample_scraper class - scrapes samples from a given web page
+sample class - creates object given the output from the sample_scraper class (hash of data).        
+              - has a name, has a creator, has a title, has a key, has a download_count, has a url, has a bpm
+creator class - one creator can have many samples
+cli class - runs all the business logic

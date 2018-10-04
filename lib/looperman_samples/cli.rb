@@ -3,6 +3,8 @@
 class LoopermanSamples::CLI
 
   def call
+    scrape_samples
+    create_sample_objects
     list_samples
     menu
     goodbye
