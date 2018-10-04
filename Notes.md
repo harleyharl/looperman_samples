@@ -18,6 +18,8 @@ CLI:
 
 5. type “download” to download the current file, "next" go to the next sample, "back" to go to the previous sample or "list" to return to list view. type "exit" to quit.
 
+
+
 Classes:
 sample_scraper class - scrapes samples from a given web page
 sample class - creates object given the output from the sample_scraper class (hash of data).        
