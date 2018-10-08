@@ -5,8 +5,6 @@ module LoopermanSamples
         # uses nokogiri's output to instantiate sample and creator objects and assign them attributes, then establishes the sample-creator relationship
         # there will be 25 samples from the front page of looperman
 
-        @@all_samples = []
-
         def self.scrape_samples
 
           doc = Nokogiri::HTML(open("https://www.looperman.com/loops?page=1&order=downloads&dir=d&when=1"))
@@ -20,12 +18,13 @@ module LoopermanSamples
                 sample_creator = Creator.new
                 sample_creator.name = sample_bundle.css(".player-sub-title").css(".icon-user").text
                 the_sample.creator = sample_creator
+                the_sample.bpm = 
             #inserts the sample into the Sample.all array
                 Sample.all << the_sample
               end
 
           Sample.all
-
         end
+
     end
 end
