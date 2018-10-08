@@ -1,5 +1,5 @@
 
-require_relative '../lib/concerns/findable.rb'
+# require_relative '../lib/concerns/findable.rb'
 
 module LoopermanSamples
 
@@ -10,7 +10,7 @@ module LoopermanSamples
 
   # creator class - a creator has a name and can have many samples
 
-  extend Concerns::Findable
+  # extend Concerns::Findable
 
   @@creators = []
 
@@ -18,7 +18,7 @@ module LoopermanSamples
     @@creators
   end
 
-  def initialize(name)
+  def initialize(name = nil)
     @name = name
     @samples = []
   end
@@ -38,6 +38,7 @@ module LoopermanSamples
   # def profile_url
   #
   # end
+  end
 
 
 end

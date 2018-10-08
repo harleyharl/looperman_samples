@@ -1,9 +1,9 @@
-require_relative '../lib/concerns/findable.rb'
+# require_relative './concerns/findable.rb'
 
 module LoopermanSamples
   class Sample
 
-    extend Concerns::Findable
+    # extend Concerns::Findable
 
     # responsible for knowing about all of the samples
 
@@ -14,8 +14,8 @@ module LoopermanSamples
       @@all
     end
 
-    def initialize(title, creator = nil, genre = nil)
-      @name = name
+    def initialize(title = nil, creator = nil, genre = nil)
+      @title = title
       self.creator = creator if creator
       self.genre = genre if genre
     end
@@ -56,14 +56,14 @@ module LoopermanSamples
     def self.create_from_sample_hash(sample_hash)
       sample_hash.each do |sample|
         the_sample = Sample.new(sample[:title])
-        the_sample_creator = Creator.new(sample[:creator])
-        the_sample_creator.samples << the_sample
+        # the_sample_creator = LoopermanSamples::Creator.new(sample[:creator])
+        # the_sample_creator.add_sample(the_sample)
         # find_or_create_by_name(thing_name)
         # the_sample.title = sample[:title]
         the_sample.key = sample[:key]
         the_sample.download_count = sample[:download_count]
         the_sample.url = sample[:url]
-        # the_sample.creator = sample[:creator]
+        the_sample.creator = sample[:creator]
         the_sample.bpm = sample[:bpm]
         @@all << the_sample
       end
