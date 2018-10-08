@@ -7,6 +7,7 @@ class LoopermanSamples::CLI
     create_sample_objects
     list_samples
     menu
+    play something
     goodbye
   end
 
