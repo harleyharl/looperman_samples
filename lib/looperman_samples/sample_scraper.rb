@@ -1,5 +1,8 @@
+require_relative '../lib/concerns/findable.rb'
+
 module LoopermanSamples
     class SampleScraper
+        extend Concerns::Findable
 
         #scrapes our samples into a big hash of string attributes
         @@sample_hashes_scraped = []
@@ -10,9 +13,11 @@ module LoopermanSamples
 
             title = player_wrapper.css(".player-title").text
 
-            creator = LoopermanSamples::Creator.new(player_wrapper.css(".player-sub-title").css(".icon-user").text)
-            # this doesn't work... try "find or create by"
-            creator = player_wrapper.css(".player-sub-title").css(".icon-user").text
+            # creator = LoopermanSamples::Creator.new(player_wrapper.css(".player-sub-title").css(".icon-user").text)
+            # # this doesn't work... try "find or create by"
+            #
+            # creator = player_wrapper.css(".player-sub-title").css(".icon-user").text
+            # creator.add_sample(self)
 
 
             download_count = player_wrapper.css("div .player-stats-wrapper").css(".stats-downloads").text

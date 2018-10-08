@@ -1,18 +1,43 @@
+require_relative '../lib/concerns/findable.rb'
+
 module LoopermanSamples
   class Sample
+
+    extend Concerns::Findable
+
     # responsible for knowing about all of the samples
 
-    attr_accessor :title, :key, :download_count, :url, :creator, :bpm
+    attr_accessor :title, :key, :download_count, :url, :creator, :bpm, :genre
     @@all = []
 
     def self.all
       @@all
     end
 
-    # def creator=(creator)
-    #   @creator = creator
-    #   creator.add_sample(self)
+    def initialize(title, creator = nil, genre = nil)
+      @name = name
+      self.creator = creator if creator
+      self.genre = genre if genre
+    end
+
+    # def self.create(name)
+    #   sample = self.new(name)
+    #   sample.save
+    #   sample
     # end
+
+
+    def creator=(creator)
+      @creator = creator
+      creator.add_sample(self)
+    end
+
+    def genre=(genre)
+      @genre = genre
+      creator.add_genre(self)
+    end
+
+
 
 
     # def initialize
@@ -27,18 +52,20 @@ module LoopermanSamples
 
     #this method should utlize the hash scraped by running LoopermanSamples::SampleScraper.create_sample_hash
     # try find or create by?
+
     def self.create_from_sample_hash(sample_hash)
       sample_hash.each do |sample|
-        the_sample = new
-        the_sample.title = sample[:title]
+        the_sample = Sample.new(sample[:title])
+        the_sample_creator = Creator.new(sample[:creator])
+        the_sample_creator.samples << the_sample
+        # find_or_create_by_name(thing_name)
+        # the_sample.title = sample[:title]
         the_sample.key = sample[:key]
         the_sample.download_count = sample[:download_count]
         the_sample.url = sample[:url]
-        the_sample.creator = sample[:creator]
+        # the_sample.creator = sample[:creator]
         the_sample.bpm = sample[:bpm]
         @@all << the_sample
-        # binding.pry
-        # the_sample.creator.samples << the_sample
       end
     end
 
