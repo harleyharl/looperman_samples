@@ -8,15 +8,15 @@ CLI:
  3. browse samples by number of downloads
 
 
-3. returns a list of samples - which sample would you like to hear (push the number or push and hold the number for continuous play)?
+2. returns a list of samples - which sample would you like to play (push the number or push and hold the number for continuous play)?
 
 	1. “808 nightmare” - 1A
 	2. “mom’s spaghetti” - 1A
 
 
-4. currently playing “mom's spaghetti” by emin3m
+3. currently playing “mom's spaghetti” by emin3m
 
-5. type “download” to download the current file, "next" go to the next sample, "back" to go to the previous sample or "list" to return to list view. type "exit" to quit.
+5. type “download” to download the current file, "next" go to the next sample, "back" to go to the previous sample or "list" to return to list view. type "exit" to quit. Or type "creator" to see more from the creator of this sample.
 
 
 

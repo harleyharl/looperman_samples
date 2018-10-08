@@ -1,27 +1,30 @@
-class LoopermanSamples::SampleScraper
+module LoopermanSamples
+    class SampleScraper
 
-  #scrapes our samples into a big hash of samples
-  @@sample_hashes_scraped = []
+        #scrapes our samples into a big hash of string attributes
+        @@sample_hashes_scraped = []
+
+        def self.create_sample_hash
+          doc = Nokogiri::HTML(open("https://www.looperman.com/loops?page=1&order=downloads&dir=d&when=1"))
+          doc.css("div#body-content").css("div div.player-wrapper").each do |player_wrapper|
+
+            title = player_wrapper.css(".player-title").text
+
+            creator = LoopermanSamples::Creator.new(player_wrapper.css(".player-sub-title").css(".icon-user").text)
+            # this doesn't work... try "find or create by"
+            creator = player_wrapper.css(".player-sub-title").css(".icon-user").text
 
 
-  # def initialize
-  #   self.new
-  # end
+            download_count = player_wrapper.css("div .player-stats-wrapper").css(".stats-downloads").text
+            url = player_wrapper.css("div .player-stats-wrapper").css("a").attr("href").text
+            #add a few more attributes
 
-  def self.create_sample_hash
-    doc = Nokogiri::HTML(open("https://www.looperman.com/loops?page=1&order=downloads&dir=d&when=1"))
-    doc.css("div#body-content").css("div div.player-wrapper").each do |player_wrapper|
+            sample_hash = {title: title, creator: creator, download_count: download_count, url: url}
+            @@sample_hashes_scraped << sample_hash
+          end
+          # i don't like this...
+          @@sample_hashes_scraped
+        end
 
-      title = player_wrapper.css(".player-title").text
-      creator = player_wrapper.css(".player-sub-title").css(".icon-user").text
-      download_count = player_wrapper.css("div .player-stats-wrapper").css(".stats-downloads").text
-      url = player_wrapper.css("div .player-stats-wrapper").css("a").attr("href").text
-
-      sample_hash = {title: title, creator: creator, download_count: download_count, url: url}
-      @@sample_hashes_scraped << sample_hash
     end
-    @@sample_hashes_scraped
-  end
-
-
 end
