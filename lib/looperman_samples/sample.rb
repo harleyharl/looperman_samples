@@ -37,6 +37,17 @@ module LoopermanSamples
       creator.add_genre(self)
     end
 
+    def self.list_samples_by_key
+      
+    end
+
+    def self.list_samples_by_tempo
+      #sort the samples by key and return as a numbered list
+    end
+
+    def self.list_samples_by_download_count
+      #sort the samples by key and return as a numbered list
+    end
 
 
 
@@ -52,22 +63,22 @@ module LoopermanSamples
 
     #this method should utlize the hash scraped by running LoopermanSamples::SampleScraper.create_sample_hash
     # try find or create by?
-
-    def self.create_from_sample_hash(sample_hash)
-      sample_hash.each do |sample|
-        the_sample = Sample.new(sample[:title])
-        # the_sample_creator = LoopermanSamples::Creator.new(sample[:creator])
-        # the_sample_creator.add_sample(the_sample)
-        # find_or_create_by_name(thing_name)
-        # the_sample.title = sample[:title]
-        the_sample.key = sample[:key]
-        the_sample.download_count = sample[:download_count]
-        the_sample.url = sample[:url]
-        the_sample.creator = sample[:creator]
-        the_sample.bpm = sample[:bpm]
-        @@all << the_sample
-      end
-    end
+    # this is redundant now
+    # def self.create_from_sample_hash(sample_hash)
+    #   sample_hash.each do |sample|
+    #     the_sample = Sample.new(sample[:title])
+    #     # the_sample_creator = LoopermanSamples::Creator.new(sample[:creator])
+    #     # the_sample_creator.add_sample(the_sample)
+    #     # find_or_create_by_name(thing_name)
+    #     # the_sample.title = sample[:title]
+    #     the_sample.key = sample[:key]
+    #     the_sample.download_count = sample[:download_count]
+    #     the_sample.url = sample[:url]
+    #     the_sample.creator = sample[:creator]
+    #     the_sample.bpm = sample[:bpm]
+    #     @@all << the_sample
+    #   end
+    # end
 
 
 
