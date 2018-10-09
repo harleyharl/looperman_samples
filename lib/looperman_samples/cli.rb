@@ -5,8 +5,8 @@ class LoopermanSamples::CLI
   def call
     LoopermanSamples::SampleScraper.scrape_samples
     main_menu
-    # play something
-    # goodbye
+    play
+    goodbye
   end
 
   def main_menu
@@ -26,6 +26,14 @@ class LoopermanSamples::CLI
     else
       puts "sorry, not sure what you want, please enter a number from 1-3, or type 'exit'"
     end
+
+  end
+
+  def play
+    puts "enter the number of the sample you'd like to listen to:"
+    input = nil
+    input = gets.strip.to_i
+    
   end
 
   # def menu
