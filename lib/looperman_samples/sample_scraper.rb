@@ -18,7 +18,16 @@ module LoopermanSamples
                 sample_creator = Creator.new
                 sample_creator.name = sample_bundle.css(".player-sub-title").css(".icon-user").text
                 the_sample.creator = sample_creator
-                the_sample.bpm = 
+            #dives into the sample's url to retrieve "bpm" and "key" tags
+                sample_page = Nokogiri::HTML(open(the_sample.url))
+                the_sample.bpm = sample_page.css("div .tag-wrapper a").text.match(/\d\d\d\s(bpm)/).to_s
+                the_sample.key = sample_page.css("div .tag-wrapper a").text.match(/(Key)\s[:]\s\w/).to_s
+                  if the_sample.key == "Key : U"
+                    the_sample.key = "Unknown"
+                  else
+                    the_sample.key = the_sample.key.sub(/(Key)\s[:]\s/, "")
+                    # binding.pry
+                  end
             #inserts the sample into the Sample.all array
                 Sample.all << the_sample
               end
