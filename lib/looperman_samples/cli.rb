@@ -29,11 +29,19 @@ class LoopermanSamples::CLI
 
   end
 
+  # def choose_sample(input)
+  #   input = gets.strip
+  # end
+
   def play
-    puts "enter the number of the sample you'd like to listen to:"
+    puts "please enter the number of the sample you'd like to listen to:"
     input = nil
     input = gets.strip.to_i
-    
+    if LoopermanSamples::Sample.all.size > input
+      "song number #{input} is playing"
+    else
+      "please choose a number from the list!"
+    end
   end
 
   # def menu
