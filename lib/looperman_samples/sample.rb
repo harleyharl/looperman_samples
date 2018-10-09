@@ -20,13 +20,6 @@ module LoopermanSamples
       self.genre = genre if genre
     end
 
-    # def self.create(name)
-    #   sample = self.new(name)
-    #   sample.save
-    #   sample
-    # end
-
-
     def creator=(creator)
       @creator = creator
       creator.add_sample(self)
@@ -37,8 +30,8 @@ module LoopermanSamples
       creator.add_genre(self)
     end
 
-
     def self.list_samples_by_key
+      #sort the samples by key and return as a numbered list
       samples_sorted_by_key = LoopermanSamples::Sample.all.sort {|a, b| a.key <=> b.key}
       samples_sorted_by_key.each_with_index do |item, index|
         puts "#{index + 1}." + " #{item.title} - " + "#{item.key}"
