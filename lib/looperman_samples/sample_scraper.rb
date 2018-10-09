@@ -6,7 +6,7 @@ module LoopermanSamples
         # there will be 25 samples from the front page of looperman
 
         def self.scrape_samples
-
+          
           doc = Nokogiri::HTML(open("https://www.looperman.com/loops?page=1&order=downloads&dir=d&when=1"))
           doc.css("div#body-content").css("div div.player-wrapper").each do |sample_bundle|
             #instantiates new sample and provides it with scraped attributes
@@ -22,11 +22,11 @@ module LoopermanSamples
                 sample_page = Nokogiri::HTML(open(the_sample.url))
                 the_sample.bpm = sample_page.css("div .tag-wrapper a").text.match(/\d\d\d\s(bpm)/).to_s
                 the_sample.key = sample_page.css("div .tag-wrapper a").text.match(/(Key)\s[:]\s\w/).to_s
+            #makes key either "unknown" or single letter
                   if the_sample.key == "Key : U"
-                    the_sample.key = "Unknown"
+                    the_sample.key = "Key unknown"
                   else
                     the_sample.key = the_sample.key.sub(/(Key)\s[:]\s/, "")
-                    # binding.pry
                   end
             #inserts the sample into the Sample.all array
                 Sample.all << the_sample

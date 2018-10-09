@@ -40,25 +40,24 @@ module LoopermanSamples
 
     def self.list_samples_by_key
       samples_sorted_by_key = LoopermanSamples::Sample.all.sort {|a, b| a.key <=> b.key}
-      # samples_sorted_by_key.each_with_index do |item, index|
-      #   puts "#{index + 1}." + " #{item.creator.name} - " + "#{creator.name} -"
-        # + " #{item.genre.name}"
-      # end
+      samples_sorted_by_key.each_with_index do |item, index|
+        puts "#{index + 1}." + " #{item.title} - " + "#{item.key}"
+      end
     end
 
     def self.list_samples_by_tempo
       #sort the samples by tempo(bpm) and return as a numbered list
-      samples_sorted_by_download_count = LoopermanSamples::Sample.all.sort {|a, b| b.bpm.to_i <=> a.bpm.to_i}
-      samples_sorted_by_download_count.each_with_index do |item, index|
-      puts "#{index + 1}." + " #{item.title}"
-    end 
+      samples_sorted_by_tempo = LoopermanSamples::Sample.all.sort {|a, b| b.bpm.to_i <=> a.bpm.to_i}
+      samples_sorted_by_tempo.each_with_index do |item, index|
+      puts "#{index + 1}." + " #{item.title}" + "- #{item.bpm}"
+    end
     end
 
     def self.list_samples_by_download_count
       #sort the samples by download count and return as a numbered list
       samples_sorted_by_download_count = LoopermanSamples::Sample.all.sort {|a, b| b.download_count.to_i <=> a.download_count.to_i}
       samples_sorted_by_download_count.each_with_index do |item, index|
-      puts "#{index + 1}." + " #{item.title}"
+      puts "#{index + 1}." + " #{item.title}" + " - #{item.download_count} downloads"
     end
     end
 

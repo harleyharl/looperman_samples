@@ -33,14 +33,23 @@ class LoopermanSamples::CLI
   #   input = gets.strip
   # end
 
+# controls the play sequence
   def play
-    puts "please enter the number of the sample you'd like to listen to:"
-    input = nil
-    input = gets.strip.to_i
-    if input < LoopermanSamples::Sample.all.size
-      puts "song number #{input} is playing"
-    else
-      puts "please choose a number from the list!"
+    input_again = nil
+    until input_again == "no"
+      loop do
+        puts "please enter the number of the sample you'd like to listen to:"
+        input = nil
+        input = gets.strip.to_i
+          if input < LoopermanSamples::Sample.all.size
+            puts "song number #{input} is playing"
+            puts "that was awesome, would you like to choose another song?"
+          else
+            puts "please enter a lower number"
+          end
+          input_again = gets.strip
+      end
+      goodbye
     end
   end
 
