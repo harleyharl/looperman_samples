@@ -37,10 +37,10 @@ class LoopermanSamples::CLI
     puts "please enter the number of the sample you'd like to listen to:"
     input = nil
     input = gets.strip.to_i
-    if LoopermanSamples::Sample.all.size > input
-      "song number #{input} is playing"
+    if input < LoopermanSamples::Sample.all.size
+      puts "song number #{input} is playing"
     else
-      "please choose a number from the list!"
+      puts "please choose a number from the list!"
     end
   end
 
