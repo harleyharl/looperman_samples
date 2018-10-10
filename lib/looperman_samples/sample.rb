@@ -4,7 +4,6 @@ module LoopermanSamples
   class Sample
 
     # extend Concerns::Findable
-
     # responsible for knowing about all of the samples
 
     attr_accessor :title, :key, :download_count, :url, :creator, :bpm, :genre

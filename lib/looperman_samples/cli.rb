@@ -23,7 +23,7 @@ class LoopermanSamples::CLI
       LoopermanSamples::Sample.list_samples_by_download_count
     else
       puts "sorry, not sure what you want"
-      main menu
+      main_menu
     end
   end
 
@@ -39,6 +39,7 @@ class LoopermanSamples::CLI
             input = gets.strip
             if input == "yes"
               binding.pry
+              # try using an array in the list method
               #not sure how to do this, i want to bring up the other samples by the creator of this one... but im not on a "current" sample am i
             elsif input == "no"
             end
