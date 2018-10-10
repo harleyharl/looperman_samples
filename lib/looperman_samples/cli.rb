@@ -14,7 +14,6 @@ class LoopermanSamples::CLI
     puts "1. browse samples by key"
     puts "2. browse samples by tempo"
     puts "3. browse samples by download count"
-
     input = gets.strip
     if input == "1"
       LoopermanSamples::Sample.list_samples_by_key
@@ -23,33 +22,39 @@ class LoopermanSamples::CLI
     elsif input == "3"
       LoopermanSamples::Sample.list_samples_by_download_count
     else
-      puts "sorry, not sure what you want, please enter a number from 1-3, or type 'exit'"
+      puts "sorry, not sure what you want"
+      main menu
     end
   end
 
 # controls the play sequence
   def play
-    input_again = nil
-    until input_again == "no"
+    input = nil
       loop do
-        puts "please enter the number of the sample you'd like to listen to:"
-        input = nil
-        input = gets.strip.to_i
-          if input < LoopermanSamples::Sample.all.size
-            puts "song number #{input} is playing"
-            puts "that was awesome, would you like to choose another song?"
-          else
-            puts "please enter a lower number"
-          end
-          input_again = gets.strip
-      end
-    end
+        puts "please enter the number of the sample you'd like to listen to or type exit:"
+        input = gets.strip
+        if input.to_i < LoopermanSamples::Sample.all.size && input.to_i > 0
+          puts "song number #{input} is playing"
+          puts "would you like to hear more from the creator of this sample? (type yes or no)"
+            input = gets.strip
+            if input == "yes"
+              binding.pry
+              #not sure how to do this, i want to bring up the other samples by the creator of this one... but im not on a "current" sample am i
+            elsif input == "no"
+            end
+          puts "Ok!"
+        elsif input.to_i > LoopermanSamples::Sample.all.size
+          puts "please enter a lower number"
+        else
+          break
+        end
+     end
   end
 
 
 
   def goodbye
-    puts "see you tomorrow for more soundpacks!"
+    puts "see you tomorrow for more samples!"
   end
 
 
