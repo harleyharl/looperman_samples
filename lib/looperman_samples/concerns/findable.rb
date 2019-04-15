@@ -14,6 +14,11 @@ module Concerns
         self.find_by_name(thing_name)            # find it and return it
       end
     end
+
+    def find_all_by_creator(creator)
+      
+    end
+
   end
 
 end
