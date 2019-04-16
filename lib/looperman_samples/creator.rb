@@ -36,9 +36,6 @@ module LoopermanSamples
     end
   end
 
-  # def profile_url
-  #
-  # end
   end
 
 

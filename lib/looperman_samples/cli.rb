@@ -10,7 +10,7 @@ class LoopermanSamples::CLI
   end
 
   def main_menu
-    puts "there are 25 new samples today. how would you like to browse?"
+    puts "There are 25 new samples today. how would you like to browse?"
     puts "1. browse samples by key"
     puts "2. browse samples by tempo"
     puts "3. browse samples by download count"
@@ -36,7 +36,7 @@ class LoopermanSamples::CLI
       loop do
         puts "please enter the number of the sample you'd like to listen to or type exit:"
         input = gets.strip
-        if input.to_i < $sample_list.size && input.to_i > 0
+        if input.to_i < $sample_list.size + 1 && input.to_i > 0
           # binding.pry
           sample = $sample_list[input.to_i - 1]
           puts "You're listening to #{sample.title} by #{sample.creator.name}"
