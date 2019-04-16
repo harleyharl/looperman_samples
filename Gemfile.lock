@@ -37,9 +37,9 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.16)
   looperman_samples!
-  pry
+  pry (~> 0)
   rake (~> 10.0)
-  rspec
+  rspec (~> 3.2)
 
 BUNDLED WITH
    1.16.6
