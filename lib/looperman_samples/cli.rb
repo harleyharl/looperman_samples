@@ -37,7 +37,6 @@ class LoopermanSamples::CLI
         puts "please enter the number of the sample you'd like to listen to or type exit:"
         input = gets.strip
         if input.to_i < $sample_list.size + 1 && input.to_i > 0
-          # binding.pry
           sample = $sample_list[input.to_i - 1]
           puts "You're listening to #{sample.title} by #{sample.creator.name}"
           puts "would you like to hear more from #{sample.creator.name}? (type yes or no)"
