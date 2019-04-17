@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["'harleymteden@gmail.com'"]
 
   spec.summary       = %q{"this is a ruby gem CLI for scraping samples from looperman"}
-  spec.description   = %q{.}
+  spec.description   = %q{"this is a ruby gem CLI for scraping samples from looperman"}
   spec.homepage      = "https://github.com/harleyharl/looperman_samples"
   spec.license       = "MIT"
 
