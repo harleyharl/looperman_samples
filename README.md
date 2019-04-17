@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-After installation run bin/looperman_samples in your terminal and follow instructions.
+After installation open your favorite console in your terminal, type LoopermanSamples::CLI.new.call and follow prompts to browse samples. 
 
 ## Development
 
