@@ -1,8 +1,6 @@
 # LoopermanSamples
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/splice_soundpacks`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A CLI for browsing the top samples and their creators' work from popular royalty-free sample website Looperman.com.
 
 ## Installation
 
@@ -20,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-After installation
+After installation run bin/looperman_samples in your terminal and follow instructions.
 
 ## Development
 
@@ -30,7 +28,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'harleyharl'/splice_soundpacks. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/harleyharl/looperman_samples. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
