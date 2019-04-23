@@ -35,15 +35,12 @@ module LoopermanSamples
         end
 
         def self.scrape_more_samples_by_creator(sample_creator) #dives into samples of a particular creator
-
           sample_creator.samples = []
           doc = Nokogiri::HTML(open("https://www.looperman.com/loops?mid=#{sample_creator.name}"))
           doc.css("div#body-content").css("div div.player-wrapper").each do |sample_bundle|
             the_sample = Sample.new
             the_sample.title = sample_bundle.css(".player-title").text
             the_sample.creator = sample_creator
-            sample_creator.samples << the_sample
-            # sample_creator.samples #necessary?
           end
         end
 

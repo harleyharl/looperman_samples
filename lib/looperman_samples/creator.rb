@@ -4,7 +4,6 @@ module LoopermanSamples
 
   attr_accessor :name, :samples
 
-  # creator class - a creator has a name and can have many samples
   @@creators = []
 
   def self.all
@@ -29,13 +28,13 @@ module LoopermanSamples
     self.samples << sample unless self.samples.include?(sample)
   end
 
-  def self.list_all_samples_by_creator(sample)
-    # binding.pry
-
-    sample.creator.samples.each_with_index do |sample, index|
-      puts "#{index + 1}." + " #{sample.title}"
-    end
-  end
+  # def self.list_all_samples_by_creator(sample)
+  #   # binding.pry
+  #
+  #   sample.creator.samples.each_with_index do |sample, index|
+  #     puts "#{index + 1}." + " #{sample.title}"
+  #   end
+  # end
 
   end
 
