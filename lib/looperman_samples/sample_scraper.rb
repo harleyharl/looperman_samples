@@ -31,6 +31,7 @@ module LoopermanSamples
             #inserts the sample into the Sample.all array
                 Sample.all << the_sample
               end
+          #returns all the samples    
           Sample.all
         end
 
