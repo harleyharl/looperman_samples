@@ -1,8 +1,10 @@
 module CliMethods
-  
+
   module Findable
     def find_all_by_creator(sample) #returns an array of sample objects
-      LoopermanSamples::SampleScraper.scrape_more_samples_by_creator(sample.creator)
+      if !sample.creator.scraped
+        LoopermanSamples::SampleScraper.scrape_more_samples_by_creator(sample.creator)
+      end
       sample.creator.samples
     end
   end
@@ -27,6 +29,7 @@ module CliMethods
     end
 
     def list_all_samples_by_creator(sample_objects) #puts samples in numbered list
+      # creator = sample_objects.first.creator
       sample_objects.each_with_index do |sample, index|
         puts "#{index + 1}." + " #{sample.title}"
       end

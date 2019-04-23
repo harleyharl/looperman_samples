@@ -62,6 +62,8 @@ class LoopermanSamples::CLI
             end
         elsif input.to_i > LoopermanSamples::Sample.all.size
           puts "please enter a lower number"
+        elsif input == "back"
+          main_menu
         else
           break
         end

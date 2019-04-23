@@ -1,7 +1,7 @@
 module LoopermanSamples
   class Creator
 
-    attr_accessor :name, :samples
+    attr_accessor :name, :samples, :scraped
 
     @@creators = []
 
@@ -10,6 +10,7 @@ module LoopermanSamples
     end
 
     def initialize(name = nil)
+      self.scraped = false
       @name = name
       @samples = []
       @@creators << self
