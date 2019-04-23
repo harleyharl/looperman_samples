@@ -6,7 +6,7 @@ module LoopermanSamples
     # extend Concerns::Findable
     # responsible for knowing about all of the samples
 
-    attr_accessor :title, :key, :download_count, :url, :creator, :bpm, :genre
+    attr_accessor :title, :key, :download_count, :url, :creator, :bpm
     @@all = []
 
     def self.all
@@ -24,33 +24,22 @@ module LoopermanSamples
       creator.add_sample(self)
     end
 
-    def genre=(genre)
-      @genre = genre
-      creator.add_genre(self)
-    end
-
     def self.list_samples_by_key
-      #sort the samples by key and return as a numbered list
-      samples_sorted_by_key = LoopermanSamples::Sample.all.sort {|a, b| a.key <=> b.key}
-      samples_sorted_by_key.each_with_index do |item, index|
+      all.sort {|a, b| a.key <=> b.key}.each_with_index do |item, index|
         puts "#{index + 1}." + " #{item.title} - " + "#{item.key}"
       end
     end
 
     def self.list_samples_by_tempo
-      #sort the samples by tempo(bpm) and return as a numbered list
-      samples_sorted_by_tempo = LoopermanSamples::Sample.all.sort {|a, b| b.bpm.to_i <=> a.bpm.to_i}
-      samples_sorted_by_tempo.each_with_index do |item, index|
-      puts "#{index + 1}." + " #{item.title}" + "- #{item.bpm}"
-    end
+      all.sort {|a, b| b.bpm.to_i <=> a.bpm.to_i}.each_with_index do |item, index|
+        puts "#{index + 1}." + " #{item.title}" + "- #{item.bpm}"
+      end
     end
 
     def self.list_samples_by_download_count
-      #sort the samples by download count and return as a numbered list
-      samples_sorted_by_download_count = LoopermanSamples::Sample.all.sort {|a, b| b.download_count.to_i <=> a.download_count.to_i}
-      samples_sorted_by_download_count.each_with_index do |item, index|
-      puts "#{index + 1}." + " #{item.title}" + " - #{item.download_count} downloads"
-    end
+      all.sort {|a, b| b.download_count.to_i <=> a.download_count.to_i}.each_with_index do |item, index|
+        puts "#{index + 1}." + " #{item.title}" + " - #{item.download_count} downloads"
+      end
     end
 
 

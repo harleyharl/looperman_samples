@@ -3,7 +3,6 @@ module LoopermanSamples
     class SampleScraper
 
         # uses nokogiri's output to instantiate sample and creator objects and assign them attributes, then establishes the sample-creator relationship
-        # there will be 25 samples from the front page of looperman
 
         def self.scrape_samples
           #goes to search for most downloaded in past 24 hours
