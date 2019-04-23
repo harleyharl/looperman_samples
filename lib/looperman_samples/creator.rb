@@ -21,6 +21,5 @@ module LoopermanSamples
     self.samples << sample unless self.samples.include?(sample)
   end
 
-
   end
 end
