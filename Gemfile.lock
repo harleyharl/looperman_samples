@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    looperman_samples (0.1.6)
+    looperman_samples (0.1.7)
       nokogiri
 
 GEM
