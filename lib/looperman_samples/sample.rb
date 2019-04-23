@@ -27,6 +27,7 @@ module LoopermanSamples
 
     def self.list_samples_by_key
       sort_by_key.each_with_index do |item, index|
+        #get rid of this! puts shouldn't be in sample class
         puts "#{index + 1}." + " #{item.title} - " + "#{item.key}"
       end
     end
@@ -37,6 +38,7 @@ module LoopermanSamples
 
     def self.list_samples_by_tempo
       sort_by_tempo.each_with_index do |item, index|
+        #get rid of this! puts shouldn't be in sample class
         puts "#{index + 1}." + " #{item.title}" + "- #{item.bpm}"
       end
     end
@@ -47,6 +49,7 @@ module LoopermanSamples
 
     def self.list_samples_by_download_count
       sort_by_download_count.each_with_index do |item, index|
+        #get rid of this! puts shouldn't be in sample class
         puts "#{index + 1}." + " #{item.title}" + " - #{item.download_count} downloads"
       end
     end
