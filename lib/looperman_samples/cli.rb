@@ -3,7 +3,7 @@
 class LoopermanSamples::CLI
 
   def call
-    LoopermanSamples::SampleScraper.scrape_samples
+    LoopermanSamples::SampleScraper.scrape_samples #DRY up... include / extend ?
     main_menu
     play
     goodbye
