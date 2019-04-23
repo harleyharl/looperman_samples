@@ -1,5 +1,4 @@
 module LoopermanSamples
-
   class Creator
 
   attr_accessor :name, :samples
@@ -16,27 +15,12 @@ module LoopermanSamples
     @@creators << self
   end
 
-  # def samples
-  #   Sample.all.select do |sample|
-  #     sample.creator = self
-  #   end
-  # end
 
-#adds the sample into the creator's repertoire
   def add_sample(sample)
     sample.creator = self unless sample.creator
     self.samples << sample unless self.samples.include?(sample)
   end
 
-  # def self.list_all_samples_by_creator(sample)
-  #   # binding.pry
-  #
-  #   sample.creator.samples.each_with_index do |sample, index|
-  #     puts "#{index + 1}." + " #{sample.title}"
-  #   end
-  # end
 
   end
-
-
 end
