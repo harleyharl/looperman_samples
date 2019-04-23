@@ -28,10 +28,10 @@ module LoopermanSamples
                     the_sample.key = the_sample.key.sub(/(Key)\s[:]\s/, "")
                   end
             #inserts the sample into the Sample.all array
-                Sample.all << the_sample
+                Sample.all << the_sample #this should happen within initialize statement
               end
           #returns all the samples
-          Sample.all
+          Sample.all #unnecessary...
         end
 
         def self.scrape_more_samples_by_creator(sample_creator) #dives into samples of a particular creator
