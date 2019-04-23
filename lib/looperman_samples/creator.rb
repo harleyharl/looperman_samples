@@ -29,9 +29,10 @@ module LoopermanSamples
     self.samples << sample unless self.samples.include?(sample)
   end
 
-  def self.list_all_samples_by_creator
+  def self.list_all_samples_by_creator(sample)
     # binding.pry
-    $samples_by_creator.each_with_index do |sample, index|
+
+    sample.creator.samples.each_with_index do |sample, index|
       puts "#{index + 1}." + " #{sample.title}"
     end
   end
